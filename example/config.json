@@ -1,0 +1,9 @@
+{
+  "root_config": "root_value",
+  "overided_value": "value",
+  "another_nested": {
+    "nested_value": {
+      "nested_value": "root_value"
+    }
+  }
+}

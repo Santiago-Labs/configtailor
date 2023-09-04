@@ -1,0 +1,19 @@
+{
+  "another_nested": {
+    "nested_value": {
+      "nested_value": "root_value"
+    }
+  },
+  "cell_url": "us4.telophase.dev",
+  "nested_values": {
+    "another_nested": {
+      "value": "us4"
+    },
+    "url": "us-west-2.us4.telophase.dev"
+  },
+  "overided_value": "value",
+  "region": "us-west-2",
+  "root_config": "root_value",
+  "top_level_config": "config.json",
+  "url": "us-west-2.us4.telophase.dev"
+}

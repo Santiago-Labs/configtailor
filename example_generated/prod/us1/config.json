@@ -1,0 +1,13 @@
+{
+  "another_nested": {
+    "nested_value": {
+      "nested_value2": "value"
+    }
+  },
+  "base_url": "us1.telophase.dev",
+  "cell": "us1",
+  "environment": "prod",
+  "overided_value": "new_dev_value",
+  "prod_config": "config",
+  "root_config": "root_value"
+}

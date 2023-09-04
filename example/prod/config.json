@@ -1,0 +1,10 @@
+{
+	"environment": "prod",
+	"prod_config": "config",
+	"overided_value": "new_dev_value",
+	"another_nested": {
+		"nested_value": {
+			"nested_value2": "value"
+		}
+	}
+}

@@ -1,0 +1,10 @@
+{
+  "another_nested": {
+    "nested_value": {
+      "nested_value": "root_value"
+    }
+  },
+  "environment": "dev",
+  "overided_value": "new_dev_value",
+  "root_config": "root_value"
+}

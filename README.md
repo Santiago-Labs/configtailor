@@ -1,0 +1,100 @@
+# ConfigTailor
+ConfigTailor is a hierarchical configuration compiler that produces a config
+file for all of your environments.
+
+ConfigTailor makes it easy to manage application configuration across any
+dimension including regions, regions and cloud accounts. It can be used
+to produce JSON configuration files that can be consumed by your application.
+
+## Extensions
+ConfigTailor allows you to substitute and extend JSON values from parent
+directories `config.json`.  For example, at the top level you can add a
+`config.json` file with global default values that you can override in subdirectories.
+<p align="center">
+    <img width="480px" alt="config compiler breakdown" src="./assets/imgs/configinheritance2.png">
+</p>
+
+## Example Config
+Follow a directory pattern like: 
+
+```
+config
+├── config.json
+├── dev
+│   └── config.json
+└── prod
+    └── region
+        └── config.json
+```
+
+file: `config/config.json`
+```json
+{
+    "global_value": "set_everywhere",
+}
+```
+
+### Variable Substitution
+Example using the variable `region`.
+
+file: `config/prod/region/config.json`
+```json
+{
+    "base_uri": "$region.telophase.dev"
+}
+```
+
+Then you can run `configtailor` with a region mapping `region:us-west-2,us-east-1,eu-west-1`:
+```bash
+configtailor compile --rootpath=config --mappings=region:us-west-2,us-east-1,eu-west-1
+```
+
+<p align="center">
+    <img width="480px" alt="config compiler breakdown" src="./assets/imgs/configcompiler.png">
+</p>
+
+Example output for `config_generated/prod/us-west-2/config.json`:
+```json
+{
+    "global_value": "set_everywhere",
+    "base_uri": "us-west-2.telophase.dev"
+}
+```
+
+While also outputting the following files:
+- `config/prod/us-west-2/config.json`
+- `config/prod/us-east-1/config.json`
+- `config/prod/eu-west-1/config.json`
+- `config/dev/config.json`
+
+View more detailed outputs by looking in the `example` directory and the
+corresponding generated files in `example_generated`.
+
+
+
+## Installing
+
+Install the configtailor CLI via go.
+
+```bash
+go install github.com/santiago-labs/configtailor@latest
+```
+
+## Why?
+In recent years, [cell architecture](https://aws.amazon.com/solutions/guidance/cell-based-architecture-on-aws/) has become more popular.
+
+Application configuration becomes more complex with cell architecture. Copy and
+pasting config files is prone to errors, so we built ConfigTailor to edit all of
+our cell's configs in a single location.
+
+For our configuration, we want:
+- version control
+- a single source of truth for each region's config
+
+ConfigTailor enables this through a simple CLI that compiles configuration files
+from a source directory structure.
+
+# Obligatory Plug
+If you like this project, at Telophase are building tools to make it easier to
+make your application multi-region or stand up cells. We'd love to chat if you
+are building out cell infrastructure.  Reach out to us at <a href="mailto:team@telophase.dev">team@telophase.dev</a>

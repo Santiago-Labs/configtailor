@@ -1,0 +1,11 @@
+{
+        "url": "$region.$cell.telophase.dev",
+        "cell_url": "$cell.telophase.dev",
+        "region": "$region",
+        "nested_values": {
+                "url": "$region.$cell.telophase.dev",
+                "another_nested": {
+                        "value": "$cell"
+                }
+        }
+}
