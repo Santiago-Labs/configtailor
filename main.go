@@ -1,9 +1,9 @@
 package main
 
 import (
-	"configtailor/cmd/configtailor"
+	cmd "github.com/santiago-labs/configtailor/cmd/configtailor"
 )
 
 func main() {
-	configtailor.Execute()
+	cmd.Execute()
 }

@@ -1,4 +1,4 @@
-package configtailor
+package cmd
 
 import (
 	"encoding/json"
@@ -6,7 +6,8 @@ import (
 	"io/ioutil"
 	"os"
 	"strings"
-	"configtailor/internal"
+
+	"github.com/santiago-labs/configtailor/internal"
 
 	"github.com/spf13/cobra"
 )

@@ -8,7 +8,8 @@ import (
 	"path"
 	"path/filepath"
 	"strings"
-	"configtailor/internal"
+
+	"github.com/santiago-labs/configtailor/internal"
 )
 
 type ConfigTailor struct {

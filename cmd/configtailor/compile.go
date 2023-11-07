@@ -1,8 +1,9 @@
-package configtailor
+package cmd
 
 import (
 	"fmt"
-	"configtailor/configtailor"
+
+	"github.com/santiago-labs/configtailor/configtailor"
 
 	"github.com/spf13/cobra"
 )

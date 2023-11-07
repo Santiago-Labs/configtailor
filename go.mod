@@ -1,4 +1,4 @@
-module configtailor
+module github.com/santiago-labs/configtailor
 
 go 1.20
 

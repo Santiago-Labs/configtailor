@@ -2,8 +2,9 @@ package configtailor_test
 
 import (
 	"reflect"
-	"configtailor/configtailor"
 	"testing"
+
+	"github.com/santiago-labs/configtailor/configtailor"
 
 	"github.com/stretchr/testify/require"
 )

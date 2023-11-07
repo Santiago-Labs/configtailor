@@ -1,4 +1,4 @@
-package configtailor
+package cmd
 
 import (
 	"fmt"
